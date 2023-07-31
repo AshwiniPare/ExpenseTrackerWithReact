@@ -19,8 +19,6 @@ function ExpenseItem(props) {
     <Card className="expense-item">
      <ExpenseDate date={props.date}></ExpenseDate>
       <ExpenseDetail amount={props.amount} location={props.location} title={props.title}></ExpenseDetail>
-      <button >Change Title</button>
-      <button >Change amount</button>
       <button >Delete Expense</button>
     </Card>
   );
