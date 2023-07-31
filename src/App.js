@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Expenses from './components/Expenses/Expenses'
 import  NewExpense from './components/NewExpense/NewExpense';
 
@@ -9,6 +9,8 @@ const App = () => {
     {title: 'Car Insurance', amount: 294.67, date: new Date(2023, 2, 28), location: 'Bangalore'}
   ]*/
   
+ 
+
   const expenses = [
     {
       id: 'e1',
@@ -30,6 +32,16 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
+ 
+  const [enteredExpense, setExpenses] = useState(expenses);
+
+  const addExpensehandler = expense => {
+    console.log('In app.js');
+    expenses.push(expense);
+    setExpenses(expenses);
+    console.log(expenses);
+  }
+
  /*return React.createElement(
     'div', 
     {}, 
@@ -38,7 +50,7 @@ const App = () => {
   );*/
   return (
       <div >
-        <NewExpense />
+        <NewExpense onAddExpense={addExpensehandler}/>
       <Expenses expenses={expenses}></Expenses>
         
     </div>
