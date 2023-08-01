@@ -16,11 +16,13 @@ function ExpenseItem(props) {
   };
 
  return (
+  <li>
     <Card className="expense-item">
      <ExpenseDate date={props.date}></ExpenseDate>
       <ExpenseDetail amount={props.amount} location={props.location} title={props.title}></ExpenseDetail>
       <button >Delete Expense</button>
     </Card>
+    </li>
   );
 }
 
